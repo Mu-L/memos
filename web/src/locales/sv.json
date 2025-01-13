@@ -1,8 +1,4 @@
 {
-  "amount-text": {
-    "memo_one": "ANTECKNING",
-    "memo_other": "ANTECKNINGAR"
-  },
   "auth": {
     "host-tip": "Du registerar dig som webbplatsvärd."
   },
@@ -57,10 +53,7 @@
     "wed": "Ons"
   },
   "editor": {
-    "cancel-edit": "Avbryt redigering",
-    "editing": "Redigerar...",
-    "local": "Lokal",
-    "placeholder": "Några tankar...",
+    "any-thoughts": "Några tankar...",
     "save": "Spara"
   },
   "memo": {
@@ -71,41 +64,23 @@
       "private": "Endast synlig för dig",
       "protected": "Synlig för medlemmar",
       "public": "Synlig för alla"
-    }
+    },
+    "remove-completed-task-list-items": "Ta bort avklarade",
+    "remove-completed-task-list-items-confirm": "Är du säker på att du vill ta bort alla avklarade todo? (Detta är oåterkalleligt)"
   },
   "message": {
     "change-memo-created-time": "Ändra anteckning skapade tid",
-    "change-resource-filename": "Ändra resursfilnamn",
-    "click-to-save-the-image": "Klicka för att spara bilden",
     "copied": "Kopierad",
-    "count-selected-resources": "Totalt valt",
     "fill-all": "Var god fyll i alla fält.",
-    "fill-form": "Vänligen fyll i detta formulär",
-    "generating-the-screenshot": "Genererar skärmdumpen...",
-    "image-load-failed": "Bildladdning misslyckades",
-    "invalid-created-datetime": "Ogiltig skapad datumtid.",
-    "invalid-resource-filename": "Ogiltligt filnamn.",
-    "login-failed": "Inloggningen misslyckades",
     "memo-not-found": "Anteckning hittades inte.",
-    "memo-updated-datetime": "Anteckning skapad datum och tid ändrad",
-    "memos-ready": "alla anteckningar är redo 🎉",
     "new-password-not-match": "Nya lösenord matchar inte.",
     "password-changed": "Lösenord ändrat",
     "password-not-match": "Lösenorden matchar inte.",
-    "private-only": "Denna anteckning är privat.",
-    "resource-filename-updated": "Resursfilnamn ändrat.",
     "restored-successfully": "Återställdes framgångsrikt",
-    "signup-failed": "Registrering misslyckades",
-    "succeed-copy-code": "Kod kopierades framgångsrikt.",
-    "succeed-copy-content": "Innehåll kopierades framgångsrikt.",
     "succeed-copy-link": "Länk kopierades framgångsrikt.",
-    "succeed-copy-resource-link": "Resurslänk kopierades framgångsrikt.",
-    "succeed-update-additional-script": "Ytterligare skript uppdateras framgångsrikt.",
-    "succeed-update-additional-style": "Ytterligare stil uppdaterades framgångsrikt.",
-    "succeed-update-customized-profile": "Profil framgångsrikt anpassad.",
-    "succeed-vacuum-database": "Succeed to vacuum database",
     "update-succeed": "Uppdateras framgångsrikt",
-    "user-not-found": "Användaren hittades inte"
+    "user-not-found": "Användaren hittades inte",
+    "remove-completed-task-list-items-successfully": "Borttagning avklarade todo lyckades!"
   },
   "resource": {
     "clear": "Rensa",
@@ -114,9 +89,7 @@
     "fetching-data": "hämtar data...",
     "linked-amount": "Länkat antecknings belopp",
     "no-resources": "Inga resurser.",
-    "no-unused-resources": "Inga oanvända resurser",
-    "warning-text": "Är du säker på att du vill ta bort den här resursen? DENNA ÅTGÄRD ÄR OÅTERSTÄLLBAR❗",
-    "warning-text-unused": "Är du säker på att du vill ta bort denna oanvända resurs? DENNA ÅTGÄRD ÄR OÅTERSTÄLLBAR❗"
+    "no-unused-resources": "Inga oanvända resurser"
   },
   "setting": {
     "account-section": {
@@ -161,13 +134,10 @@
         "icon-url": "Icon URL",
         "title": "Customize Server"
       },
-      "database-file-size": "Databas filstorlek",
       "disable-public-memos": "Inaktivera offentliga anteckningar",
       "display-with-updated-time": "Display with updated time",
-      "server-name": "Server Name"
+      "server-name": "Server Name",
+      "removed-completed-task-list-items": "Aktivera ta bort avklarade"
     }
-  },
-  "tag": {
-    "tip-text": "Ange `#tag ` för att skapa"
   }
 }

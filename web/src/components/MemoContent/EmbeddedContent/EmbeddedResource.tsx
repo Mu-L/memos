@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { useEffect } from "react";
 import MemoResourceListView from "@/components/MemoResourceListView";
 import useLoading from "@/hooks/useLoading";
@@ -35,25 +35,25 @@ const getAdditionalClassNameWithParams = (params: URLSearchParams) => {
   return additionalClassNames.join(" ");
 };
 
-const EmbeddedResource = ({ resourceId, params: paramsStr }: Props) => {
+const EmbeddedResource = ({ resourceId: uid, params: paramsStr }: Props) => {
   const loadingState = useLoading();
   const resourceStore = useResourceStore();
-  const resource = resourceStore.getResourceByName(resourceId);
+  const resource = resourceStore.getResourceByName(uid);
   const params = new URLSearchParams(paramsStr);
 
   useEffect(() => {
-    resourceStore.searchResources(`uid == ${resourceId}`).finally(() => loadingState.setFinish());
-  }, [resourceId]);
+    resourceStore.fetchResourceByUID(uid).finally(() => loadingState.setFinish());
+  }, [uid]);
 
   if (loadingState.isLoading) {
     return null;
   }
   if (!resource) {
-    return <Error message={`Resource not found: ${resourceId}`} />;
+    return <Error message={`Resource not found: ${uid}`} />;
   }
 
   return (
-    <div className={classNames("max-w-full", getAdditionalClassNameWithParams(params))}>
+    <div className={clsx("max-w-full", getAdditionalClassNameWithParams(params))}>
       <MemoResourceListView resources={[resource]} />
     </div>
   );
