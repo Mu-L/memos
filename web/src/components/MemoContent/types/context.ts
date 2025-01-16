@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Node } from "@/types/node";
+import { Node } from "@/types/proto/api/v1/markdown_service";
 
 interface Context {
   nodes: Node[];
@@ -9,6 +9,7 @@ interface Context {
   memoName?: string;
   readonly?: boolean;
   disableFilter?: boolean;
+  parentPage?: string;
 }
 
 export const RendererContext = createContext<Context>({

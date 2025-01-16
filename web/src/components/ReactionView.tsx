@@ -1,50 +1,19 @@
 import { Tooltip } from "@mui/joy";
-import classNames from "classnames";
+import clsx from "clsx";
 import { memoServiceClient } from "@/grpcweb";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { useMemoStore } from "@/store/v1";
-import { Memo } from "@/types/proto/api/v2/memo_service";
-import { Reaction_Type } from "@/types/proto/api/v2/reaction_service";
-import { User } from "@/types/proto/api/v2/user_service";
+import { State } from "@/types/proto/api/v1/common";
+import { Memo } from "@/types/proto/api/v1/memo_service";
+import { User } from "@/types/proto/api/v1/user_service";
 
 interface Props {
   memo: Memo;
-  reactionType: Reaction_Type;
+  reactionType: string;
   users: User[];
 }
 
-export const stringifyReactionType = (reactionType: Reaction_Type): string => {
-  switch (reactionType) {
-    case Reaction_Type.THUMBS_UP:
-      return "👍";
-    case Reaction_Type.THUMBS_DOWN:
-      return "👎";
-    case Reaction_Type.HEART:
-      return "💛";
-    case Reaction_Type.FIRE:
-      return "🔥";
-    case Reaction_Type.CLAPPING_HANDS:
-      return "👏";
-    case Reaction_Type.LAUGH:
-      return "😂";
-    case Reaction_Type.OK_HAND:
-      return "👌";
-    case Reaction_Type.ROCKET:
-      return "🚀";
-    case Reaction_Type.EYES:
-      return "👀";
-    case Reaction_Type.THINKING_FACE:
-      return "🤔";
-    case Reaction_Type.CLOWN_FACE:
-      return "🤡";
-    case Reaction_Type.QUESTION_MARK:
-      return "❓";
-    default:
-      return "";
-  }
-};
-
-const stringifyUsers = (users: User[], reactionType: Reaction_Type): string => {
+const stringifyUsers = (users: User[], reactionType: string): string => {
   if (users.length === 0) {
     return "";
   }
@@ -64,9 +33,10 @@ const ReactionView = (props: Props) => {
   const currentUser = useCurrentUser();
   const memoStore = useMemoStore();
   const hasReaction = users.some((user) => currentUser && user.username === currentUser.username);
+  const readonly = memo.state === State.ARCHIVED;
 
   const handleReactionClick = async () => {
-    if (!currentUser) {
+    if (!currentUser || readonly) {
       return;
     }
 
@@ -97,15 +67,16 @@ const ReactionView = (props: Props) => {
   return (
     <Tooltip title={stringifyUsers(users, reactionType)} placement="top">
       <div
-        className={classNames(
-          "h-7 border px-2 py-0.5 rounded-full font-memo flex flex-row justify-center items-center gap-1 dark:border-zinc-700",
-          currentUser && "cursor-pointer",
+        className={clsx(
+          "h-7 border px-2 py-0.5 rounded-full flex flex-row justify-center items-center gap-1 dark:border-zinc-700",
+          "text-sm text-gray-600 dark:text-gray-400",
+          currentUser && !readonly && "cursor-pointer",
           hasReaction && "bg-blue-100 border-blue-200 dark:bg-zinc-900",
         )}
         onClick={handleReactionClick}
       >
-        <span>{stringifyReactionType(reactionType)}</span>
-        <span className="text-sm text-gray-500 dark:text-gray-400">{users.length}</span>
+        <span>{reactionType}</span>
+        <span className="opacity-60">{users.length}</span>
       </div>
     </Tooltip>
   );
