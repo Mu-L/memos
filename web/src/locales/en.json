@@ -82,7 +82,10 @@
     "yourself": "Yourself",
     "shortcuts": "Shortcuts",
     "created-at": "Created At",
-    "properties": "Properties"
+    "properties": "Properties",
+    "shortcut-filter": "Shortcut filter",
+    "input": "Input",
+    "tree-mode": "Tree mode"
   },
   "days": {
     "fri": "Fri",
@@ -291,10 +294,12 @@
       "url-prefix-placeholder": "Custom URL prefix, optional",
       "url-suffix": "URL suffix",
       "url-suffix-placeholder": "Custom URL suffix, optional",
-      "warning-text": "Are you sure to delete storage service \"{{name}}\"? THIS ACTION IS IRREVERSIBLE"
+      "warning-text": "Are you sure to delete storage service \"{{name}}\"? THIS ACTION IS IRREVERSIBLE",
+      "filepath-template": "Filepath template"
     },
     "system": "System",
     "system-section": {
+      "title": "General",
       "additional-script": "Additional script",
       "additional-script-placeholder": "Additional JavaScript code",
       "additional-style": "Additional style",
