@@ -82,7 +82,10 @@
     "yourself": "Yourself",
     "shortcuts": "Shortcuts",
     "created-at": "Created At",
-    "properties": "Properties"
+    "properties": "Properties",
+    "shortcut-filter": "Shortcut filter",
+    "input": "Input",
+    "tree-mode": "Tree mode"
   },
   "days": {
     "fri": "Fri",
@@ -134,7 +137,9 @@
     "direction": "Direction",
     "direction-desc": "Descending",
     "direction-asc": "Ascending",
-    "no-memos": "No memos."
+    "no-memos": "No memos.",
+    "click-to-show-nsfw-content": "Click to show NSFW contnet",
+    "click-to-hide-nsfw-content": "Click to hide NSFW content"
   },
   "message": {
     "archived-successfully": "Archived successfully",
@@ -225,7 +230,9 @@
       "archive-warning": "Are you sure to archive {{username}}?",
       "create-a-member": "Create a member",
       "delete-member": "Delete Member",
-      "delete-warning": "Are you sure to delete {{username}}? THIS ACTION IS IRREVERSIBLE"
+      "delete-warning": "Are you sure to delete {{username}}? THIS ACTION IS IRREVERSIBLE",
+      "user": "User",
+      "admin": "Admin"
     },
     "my-account": "My Account",
     "preference": "Preferences",
@@ -291,10 +298,12 @@
       "url-prefix-placeholder": "Custom URL prefix, optional",
       "url-suffix": "URL suffix",
       "url-suffix-placeholder": "Custom URL suffix, optional",
-      "warning-text": "Are you sure to delete storage service \"{{name}}\"? THIS ACTION IS IRREVERSIBLE"
+      "warning-text": "Are you sure to delete storage service \"{{name}}\"? THIS ACTION IS IRREVERSIBLE",
+      "filepath-template": "Filepath template"
     },
     "system": "System",
     "system-section": {
+      "title": "General",
       "additional-script": "Additional script",
       "additional-script-placeholder": "Additional JavaScript code",
       "additional-style": "Additional style",
@@ -370,7 +379,8 @@
       "enable-memo-comments": "Enable memo comments",
       "enable-memo-location": "Enable memo location",
       "content-lenght-limit": "Content length limit (Byte)",
-      "reactions": "Reactions"
+      "reactions": "Reactions",
+      "enable-blur-nsfw-content": "Enable NSFW content blurring (add NSFW tags below)"
     },
     "version": "Version"
   },
