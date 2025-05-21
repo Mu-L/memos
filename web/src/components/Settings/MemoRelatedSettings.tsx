@@ -94,13 +94,6 @@ const MemoRelatedSettings = () => {
         />
       </div>
       <div className="w-full flex flex-row justify-between items-center">
-        <span>{t("setting.memo-related-settings.enable-memo-location")}</span>
-        <Switch
-          checked={memoRelatedSetting.enableLocation}
-          onChange={(event) => updatePartialSetting({ enableLocation: event.target.checked })}
-        />
-      </div>
-      <div className="w-full flex flex-row justify-between items-center">
         <span>{t("setting.system-section.enable-double-click-to-edit")}</span>
         <Switch
           checked={memoRelatedSetting.enableDoubleClickEdit}
@@ -144,9 +137,8 @@ const MemoRelatedSettings = () => {
             );
           })}
           <Input
-            className="w-32 !rounded-full !pl-3"
+            className="w-32 !rounded-full !pl-1"
             placeholder={t("common.input")}
-            size="sm"
             value={editingReaction}
             onChange={(event) => setEditingReaction(event.target.value.trim())}
             endDecorator={
@@ -185,9 +177,8 @@ const MemoRelatedSettings = () => {
             );
           })}
           <Input
-            className="w-32 !rounded-full !pl-3"
+            className="w-32 !rounded-full !pl-1"
             placeholder={t("common.input")}
-            size="sm"
             value={editingNsfwTag}
             onChange={(event) => setEditingNsfwTag(event.target.value.trim())}
             endDecorator={
